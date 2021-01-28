@@ -6,7 +6,9 @@ Welcome to the small FE coding challenge of KFR. These are your tasks:
   1. Have a running react app with that displays the weather of a given location in a box
   2. The box should be horizontally and vertically centered
   3. Windspeed should be displayed in knots per hour
-  3. Bonuses:
+  4. Document your steps via commits
+  5. Provide your solution in a branch `solution-[your first name here]`
+  6. Bonuses:
    1: Use Typescript 
    2: Add weather icon to the top right ([weather api specs](https://www.metaweather.com/api/))
    3: Integrate forecast for tomorrow
