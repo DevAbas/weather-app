@@ -7,7 +7,7 @@ Welcome to the small FE coding challenge of KFR. These are your tasks:
 2. The box should be horizontally and vertically centered
 3. Windspeed should be displayed in knots per hour
 4. Document your steps via commits
-5. Provide your solution in a branch `solution-[your first name here]`
+5. Provide your solution as a pull request for master
 
 ### Bonuses
 1. Use Typescript 
