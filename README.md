@@ -1,29 +1,16 @@
 # README #
+Welcome to the small FE coding challenge of KFR. These are your tasks: 
 
-This README would normally document whatever steps are necessary to get your application up and running.
-
-### What is this repository for? ###
-
-* Quick summary
-* Version
-* [Learn Markdown](https://bitbucket.org/tutorials/markdowndemo)
-
-### How do I get set up? ###
-
-* Summary of set up
-* Configuration
-* Dependencies
-* Database configuration
-* How to run tests
-* Deployment instructions
-
-### Contribution guidelines ###
-
-* Writing tests
-* Code review
-* Other guidelines
-
-### Who do I talk to? ###
-
-* Repo owner or admin
-* Other community or team contact
+## Goal of the challenge
+ Tasks
+  1. Have a running react app with that displays the weather of a given location in a box
+  2. The box should be horizontally and vertically centered
+  3. Windspeed should be displayed in knots per hour
+  3. Bonuses:
+   1: Use Typescript 
+   2: Add weather icon to the top right ([weather api specs](https://www.metaweather.com/api/))
+   3: Integrate forecast for tomorrow
+   4. Add a location search
+  
+### Sources ###
+As a starting point, use this location to retrieve the weather: https://www.metaweather.com/api/location/638242/
