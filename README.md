@@ -9,7 +9,8 @@ Welcome to the small FE coding challenge of KFR. These are your tasks:
   4. Document your steps via commits
   5. Provide your solution in a branch `solution-[your first name here]`
   6. Bonuses:
-   1: Use Typescript 
+   1: Use Typescript
+   
    2: Add weather icon to the top right ([weather api specs](https://www.metaweather.com/api/))
    3: Integrate forecast for tomorrow
    4. Add a location search
