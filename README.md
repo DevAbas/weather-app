@@ -17,4 +17,3 @@ Welcome to the small FE coding challenge of KFR. These are your tasks:
   
 ### Sources 
 As a starting point, use this location to retrieve the weather: https://www.metaweather.com/api/location/638242/
-ˆ
