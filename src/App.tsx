@@ -1,3 +1,7 @@
+import { motion } from 'framer-motion';
+
+import { appAnimations } from './animations';
+
 import { SearchLocation } from './components/SearchLocation';
 import { Logo } from './components/UI/Logo';
 import { WeatherBox } from './components/UI/WeatherBox';
@@ -8,18 +12,43 @@ function App() {
     <WeatherBox>
       <div className='w-full flex justify-between'>
         <div className='flex flex-col'>
-          <div className='mb-20'>
+          <motion.div
+            variants={appAnimations.logoVariants}
+            initial='hidden'
+            animate='show'
+            className='mb-20'
+          >
             <Logo />
-          </div>
+          </motion.div>
 
-          <div className='w-72'>
+          <motion.div
+            variants={appAnimations.searchLocationVariants}
+            initial='hidden'
+            animate='show'
+            className='w-72 h-10 overflow-hidden'
+          >
             <SearchLocation />
-          </div>
+          </motion.div>
 
-          <div className='mt-auto'>
-            <h2 className='text-8xl mb-1'>London</h2>
-            <p className='font-light'>November 23, 2021</p>
-          </div>
+          <motion.div
+            className='mt-auto'
+            variants={appAnimations.cityNameContainerVariants}
+            initial='hidden'
+            animate='show'
+          >
+            <motion.h2
+              variants={appAnimations.cityNameItemVariants}
+              className='text-8xl mb-1 h-24 overflow-hidden'
+            >
+              London
+            </motion.h2>
+            <motion.p
+              variants={appAnimations.cityNameItemVariants}
+              className='font-light'
+            >
+              November 23, 2021
+            </motion.p>
+          </motion.div>
         </div>
         <div>
           <WeatherDetails />
