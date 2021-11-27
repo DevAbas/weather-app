@@ -7,11 +7,18 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        blue: '#0555BF',
+        blue: {
+          light: '#0575E6',
+          DEFAULT: '#0555BF',
+          dark: '#021B79',
+        },
       },
       fontFamily: {
         sans: ["'Poppins'", ...defaultTheme.fontFamily.sans],
       },
+    },
+    boxShadow: {
+      DEFAULT: '4px 4px 30px rgba(0, 0, 0, 0.1)',
     },
   },
   variants: {

@@ -1,5 +1,12 @@
+import { Logo } from './components/UI/Logo';
+import { WeatherBox } from './components/UI/WeatherBox';
+
 function App() {
-  return <div className='bg-red-500 p-20'>WEATHER APP</div>;
+  return (
+    <WeatherBox>
+      <Logo />
+    </WeatherBox>
+  );
 }
 
 export default App;
