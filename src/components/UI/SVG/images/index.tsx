@@ -1,3 +1,4 @@
+export { default as SearchIcon } from './SearchIcon'
 export { default as WeatherHeal } from './WeatherHeal'
 export { default as WeatherHeavyCloud } from './WeatherHeavyCloud'
 export { default as WeatherHeavyRain } from './WeatherHeavyRain'
