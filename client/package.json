@@ -27,6 +27,7 @@
     "eject": "react-scripts eject",
     "transform-svg-images": "svgr ./src/assets/images -d ./src/components/UI/SVG/images --icon --typescript"
   },
+  "author": "Abas Turabli <me@abasturabli.com>",
   "eslintConfig": {
     "extends": [
       "react-app",
