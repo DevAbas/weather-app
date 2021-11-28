@@ -5,15 +5,23 @@ import { motion } from 'framer-motion';
 import { appAnimations } from './animations';
 import { fetchWeather } from './api';
 
+import { useState } from 'react';
+
 import { SearchLocation } from './components/SearchLocation';
 import { Logo } from './components/UI/Logo';
 import { WeatherBox } from './components/UI/WeatherBox';
 import { WeatherDetails } from './components/WeatherDetails';
 
+const defaultLocations = 638242;
+
 function App() {
-  const { data, isLoading } = useQuery(['weather', 638242], () =>
-    fetchWeather(638242)
+  const [currentLocation, setCurrentLocation] = useState(defaultLocations);
+
+  const { data, isLoading } = useQuery(
+    ['weatherDetails', currentLocation],
+    () => fetchWeather(currentLocation)
   );
+
   return (
     <WeatherBox>
       {isLoading && (
@@ -21,6 +29,7 @@ function App() {
           <HashLoader color='#FFF' />
         </div>
       )}
+
       {data && (
         <div className='w-full flex justify-between'>
           <div className='flex flex-col'>
@@ -37,9 +46,13 @@ function App() {
               variants={appAnimations.searchLocationVariants}
               initial='hidden'
               animate='show'
-              className='w-72 h-10 overflow-hidden'
+              className='w-72'
             >
-              <SearchLocation />
+              <SearchLocation
+                setNewLocation={(newLocation: number) =>
+                  setCurrentLocation(newLocation)
+                }
+              />
             </motion.div>
 
             <motion.div
@@ -50,13 +63,13 @@ function App() {
             >
               <motion.h2
                 variants={appAnimations.cityNameItemVariants}
-                className='text-8xl mb-1 h-24 overflow-hidden'
+                className='text-8xl'
               >
                 {data.title}
               </motion.h2>
               <motion.p
                 variants={appAnimations.cityNameItemVariants}
-                className='font-light'
+                className='font-light mt-5'
               >
                 {new Date(data.time).toLocaleString('default', {
                   month: 'long',
