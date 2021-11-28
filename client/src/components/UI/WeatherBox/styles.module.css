@@ -1,8 +1,6 @@
 .weatherBox {
-  @apply max-w-7xl 
-  w-full 
-  mx-auto 
-  p-28
-  bg-gradient-to-br from-blue-dark to-blue-light
-  shadow;
+  min-height: 49rem;
+
+  @apply max-w-7xl w-full relative mx-auto p-28
+    bg-gradient-to-br from-blue-dark to-blue-light shadow;
 }
