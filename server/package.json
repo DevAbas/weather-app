@@ -1,0 +1,16 @@
+{
+  "name": "dev-challenge-fe-abas-turabli",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Abas <me@abasturabli.com>",
+  "license": "MIT",
+  "scripts": {
+    "start": "nodemon index.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "node-fetch": "2",
+    "nodemon": "^2.0.15"
+  }
+}
