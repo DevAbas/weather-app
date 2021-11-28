@@ -1,0 +1,6 @@
+.logo {
+  @apply font-sans
+    font-bold
+    text-xl
+    text-white;
+}
