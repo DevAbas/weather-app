@@ -1,10 +1,21 @@
 import { motion } from 'framer-motion';
 
 import { weatherDetailsAnimations } from '../../animations';
+import { ShowWeatherDays, WeatherResponse } from '../../types';
+import { mphToKnots } from '../../utils/mphToKnots';
 
 import { WeatherHeavyCloud, WeatherHeavyRain } from '../UI/SVG/images';
 
-const WeatherDetails: React.FC = () => {
+type WeatherDetailsProps = { data: WeatherResponse };
+
+const WeatherDetails: React.FC<WeatherDetailsProps> = ({
+  data,
+}: WeatherDetailsProps) => {
+  const weatherDetailsOfToday =
+    data.consolidated_weather[ShowWeatherDays.Today];
+  const weatherDetailsOfTomorrow =
+    data.consolidated_weather[ShowWeatherDays.Tomorrow];
+
   return (
     <>
       <div className='flex flex-col items-center'>
@@ -25,13 +36,13 @@ const WeatherDetails: React.FC = () => {
             className='text-3xl mb-4'
             variants={weatherDetailsAnimations.tempratureItemVariants}
           >
-            Cloudy
+            {weatherDetailsOfToday.weather_state_name}
           </motion.p>
           <motion.p
             className='font-light text-8xl'
             variants={weatherDetailsAnimations.tempratureItemVariants}
           >
-            16°C
+            {`${Math.round(weatherDetailsOfToday.the_temp)}°C`}
           </motion.p>
         </motion.div>
       </div>
@@ -55,22 +66,24 @@ const WeatherDetails: React.FC = () => {
             className='w-full flex justify-between font-light mb-1'
             variants={weatherDetailsAnimations.infoItemVariants}
           >
-            <span>Cloudy</span>
-            <span>80%</span>
+            <span>Wind Speed</span>
+            <span>
+              {`${Math.round(mphToKnots(weatherDetailsOfToday.wind_speed))}kn`}
+            </span>
           </motion.li>
           <motion.li
             className='w-full flex justify-between font-light mb-1'
             variants={weatherDetailsAnimations.infoItemVariants}
           >
             <span>Humidity</span>
-            <span>62%</span>
+            <span>{`${weatherDetailsOfToday.humidity}%`}</span>
           </motion.li>
           <motion.li
             className='w-full flex justify-between font-light'
             variants={weatherDetailsAnimations.infoItemVariants}
           >
-            <span>Wind</span>
-            <span>8km/h</span>
+            <span>Confidence</span>
+            <span>{`${weatherDetailsOfToday.predictability}%`}</span>
           </motion.li>
         </motion.ul>
       </div>
@@ -96,8 +109,10 @@ const WeatherDetails: React.FC = () => {
             <span className='text-5xl mr-5'>
               <WeatherHeavyCloud />
             </span>
-            <span className='mr-5'>Rainy</span>
-            <span>11°C</span>
+            <span className='mr-5'>
+              {weatherDetailsOfTomorrow.weather_state_name}
+            </span>
+            <span>{`${Math.round(weatherDetailsOfTomorrow.the_temp)}°C`}</span>
           </motion.li>
         </motion.ul>
       </div>

@@ -12,42 +12,42 @@ export enum WeatherStates {
 }
 
 interface ConsolidatedWeather {
-  id: Number;
-  weather_state_name: String;
+  id: number;
+  weather_state_name: string;
   weather_state_abbr: WeatherStates;
-  wind_direction_compass: String;
+  wind_direction_compass: string;
   applicable_date: Date;
   // Unit: centigrade
-  min_temp: Number;
+  min_temp: number;
   // Unit: centigrade
-  max_temp: Number;
+  max_temp: number;
   // Unit: centigrade
-  the_temp: Number;
+  the_temp: number;
   // Unit: mph
-  wind_speed: Number;
+  wind_speed: number;
   // Unit: degrees
-  wind_direction: Number;
+  wind_direction: number;
   // Unit: mbar
-  air_pressure: Number;
+  air_pressure: number;
   // Unit: percentage
-  humidity: Number;
-  visibility: Number;
+  humidity: number;
+  visibility: number;
   // Unit: percentage
-  predictability: Number;
+  predictability: number;
 }
 
 export interface WeatherResponse {
-  title: String;
-  location_type: String;
-  woeid: Number;
-  latt_long: String;
-  time: String;
+  title: string;
+  location_type: string;
+  woeid: number;
+  latt_long: string;
+  time: string;
   consolidated_weather: ConsolidatedWeather[];
 }
 
 export interface LocationResponse {
-  title: String;
-  location_type: String;
-  woeid: Number;
-  latt_long: String;
+  title: string;
+  location_type: string;
+  woeid: number;
+  latt_long: string;
 }
