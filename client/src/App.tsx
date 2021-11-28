@@ -1,6 +1,8 @@
 import { motion } from 'framer-motion';
+import { useQuery } from 'react-query';
 
 import { appAnimations } from './animations';
+import { fetchWeather } from './api';
 
 import { SearchLocation } from './components/SearchLocation';
 import { Logo } from './components/UI/Logo';
@@ -8,6 +10,8 @@ import { WeatherBox } from './components/UI/WeatherBox';
 import { WeatherDetails } from './components/WeatherDetails';
 
 function App() {
+  const { data } = useQuery('weather', () => fetchWeather(638242));
+  console.log(data);
   return (
     <WeatherBox>
       <div className='w-full flex justify-between'>
