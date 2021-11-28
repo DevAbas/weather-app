@@ -4,7 +4,7 @@ import { weatherDetailsAnimations } from '../../animations';
 import { ShowWeatherDays, WeatherResponse } from '../../types';
 import { mphToKnots } from '../../utils/mphToKnots';
 
-import { WeatherHeavyCloud, WeatherHeavyRain } from '../UI/SVG/images';
+import { WeatherIcon } from '../WeatherIcon';
 
 type WeatherDetailsProps = { data: WeatherResponse };
 
@@ -24,7 +24,11 @@ const WeatherDetails: React.FC<WeatherDetailsProps> = ({
           initial={{ opacity: 0 }}
           animate={{ opacity: 1, transition: { ease: 'easeInOut', delay: 1 } }}
         >
-          <WeatherHeavyRain fontSize='100px' />
+          <span className='text-8xl'>
+            <WeatherIcon
+              weatherState={weatherDetailsOfToday.weather_state_abbr}
+            />
+          </span>
         </motion.span>
         <motion.div
           className='flex flex-col items-center'
@@ -107,7 +111,9 @@ const WeatherDetails: React.FC<WeatherDetailsProps> = ({
             variants={weatherDetailsAnimations.infoItemVariants}
           >
             <span className='text-5xl mr-5'>
-              <WeatherHeavyCloud />
+              <WeatherIcon
+                weatherState={weatherDetailsOfTomorrow.weather_state_abbr}
+              />
             </span>
             <span className='mr-5'>
               {weatherDetailsOfTomorrow.weather_state_name}
