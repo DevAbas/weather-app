@@ -1,19 +1,91 @@
-Welcome to the small FE coding challenge of KFR. These are your tasks: 
+# Weather-app
 
-## Goal of the challenge
+This app developed just purposes of practises
 
-### Tasks
-1. Have a running react app with that displays the weather of a given location in a box
-2. The box should be horizontally and vertically centered
-3. Windspeed should be displayed in knots per hour
-4. Create a branch with your name and document your steps via commits
-5. Provide your solution as a pull request for master
+## Running application
 
-### Bonuses
-1. Use Typescript 
-2. Add weather icon to the top right ([weather api specs](https://www.metaweather.com/api/))
-3. Integrate forecast for tomorrow
-4. Add a location search
-  
-### Sources 
-As a starting point, use this location to retrieve the weather: https://www.metaweather.com/api/location/638242/
+The following commands can be executed to run the app locally
+
+### Install packages for client(React.js)
+First you need get inside of client folder
+
+```bash
+cd ./client
+```
+Run the following command to install all the dependencies
+
+```bash
+npm install 
+```
+or
+```bash
+yarn 
+```
+### Start local server
+
+Running this command will start a local server
+
+```bash
+npm start
+```
+or
+```bash
+yarn start
+```
+
+## Technologies used on client side
+
+As per description in the test requirements, the following technologies was used in the creation of the app
+
+### ReactJS
+
+Main library and core of the app, used to built the SPA
+
+### Typescript
+
+Typed JavaScript at Any Scale.
+
+### React Query
+
+Performant and powerful data synchronization for React
+
+### TailwindCSS
+
+A utility-first CSS framework
+### Weather integration
+
+The API consumed by this app is provided by [MetaWeather](https://www.metaweather.com/api/) free tier
+### Framer motion
+
+For implement smooth animations
+
+### Install packages for server(Express.js)
+First you need get inside of client folder
+
+```bash
+cd ./server
+```
+Run the following command to install all the dependencies
+
+```bash
+npm install 
+```
+or
+```bash
+yarn 
+```
+### Start local server
+
+Running this command will start a local server
+
+```bash
+npm start
+```
+or
+```bash
+yarn start
+```
+
+## Technologies used on server side
+
+### ExpressJS
