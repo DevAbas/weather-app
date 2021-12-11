@@ -60,11 +60,7 @@ The API consumed by this app is provided by [MetaWeather](https://www.metaweathe
 For implement smooth animations
 
 ### Install packages for server(Express.js)
-First you need get inside of client folder
 
-```bash
-cd ./server
-```
 Run the following command to install all the dependencies
 
 ```bash
