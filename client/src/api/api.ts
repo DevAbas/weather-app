@@ -2,7 +2,7 @@ import axios from 'axios';
 
 import { WeatherResponse, LocationResponse } from '../types';
 
-const weatherAPI = 'http://localhost:4000/meta-weather';
+const weatherAPI = 'https://creative-weather.herokuapp.com/meta-weather';
 
 export async function fetchWeather(locationId: number) {
   const { data } = await axios.get<WeatherResponse>(
